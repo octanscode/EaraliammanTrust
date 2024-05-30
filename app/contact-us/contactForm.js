@@ -10,10 +10,12 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   return (
     <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
-      <Box sx={{ width: "80%", display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{ width: "80%", display: "flex", justifyContent: "space-between" }}
+      >
         <Box
           sx={{
-            width: "48%",
+            width: "50%",
             height: "75vh",
             display: "flex",
             justifyContent: "center",
@@ -24,12 +26,12 @@ const ContactForm = () => {
             alt="Contact Form Image"
             style={{
               height: "100%",
-              width: "88%",
+              width: "100%",
               objectFit: "cover",
             }}
           />
         </Box>
-        <Box sx={{ width: "38%" }}>
+        <Box sx={{ width: "40%" }}>
           <Typography variant="h2" sx={{ color: "black", textAlign: "center" }}>
             Contact Us
           </Typography>
