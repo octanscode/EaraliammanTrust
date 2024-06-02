@@ -12,9 +12,27 @@ import AppLogo from "../public/asset/image/AppLogo.png";
 import { useDispatch } from "react-redux";
 import { setCurrActiveNavItem } from "@/store/currActiveNavItem";
 import { PRIMARY_BLUE } from "@/constants";
+import ProjectsOnHover from "./projectsOnHover";
 
-export default function CustomAppbar() {
+export default function CustomAppbar({ bgColor }) {
   const dispatch = useDispatch();
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const navigationList = [
     "Home",
     "About Us",
@@ -36,7 +54,13 @@ export default function CustomAppbar() {
       <AppBar
         elevation={0}
         position="fixed"
-        sx={{ backgroundColor: "transparent" }}
+        sx={{
+          backgroundColor: isScrolled
+            ? "#f5f5f5"
+            : bgColor
+            ? bgColor
+            : "transparent",
+        }}
       >
         <Toolbar
           sx={{
@@ -67,16 +91,21 @@ export default function CustomAppbar() {
                 variant="standard"
                 key={index}
                 sx={{
+                  color: isScrolled ? "black" : bgColor ? "black" : "white",
                   textTransform: "capitalize",
                   textDecoration:
                     index === currActiveNavItem
-                      ? `2px solid white underline`
+                      ? `2px solid ${
+                          isScrolled ? "black" : bgColor ? "black" : "white"
+                        } underline`
                       : "none",
                   textUnderlineOffset: "4px",
                   "&:hover": {
                     textDecoration:
                       index === currActiveNavItem
-                        ? `2px solid white underline`
+                        ? `2px solid ${
+                            isScrolled ? "black" : bgColor ? "black" : "white"
+                          } underline`
                         : "none",
                     textUnderlineOffset: "4px",
                     backgroundColor: "transparent",
@@ -84,7 +113,11 @@ export default function CustomAppbar() {
                 }}
                 onClick={() => handleNavClick(index)}
               >
-                <Typography variant="body1">{item}</Typography>
+                {item === "Projects" ? (
+                  <ProjectsOnHover />
+                ) : (
+                  <Typography variant="body1">{item}</Typography>
+                )}
               </Button>
             ))}
           </Box>

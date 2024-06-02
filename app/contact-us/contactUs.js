@@ -3,6 +3,7 @@ import React from "react";
 import HeroSection from "./heroSection";
 import ContactForm from "./contactForm";
 import ContactModes from "./contactModes";
+import MapLocation from "./mapLocation";
 
 const ContactUs = () => {
   return (
@@ -12,7 +13,9 @@ const ContactUs = () => {
       <ContactForm />
       <Box sx={{ mt: 14 }} />
       <ContactModes />
-      <Box sx={{ mt: 10 }} />
+      <Box sx={{ mt: 14 }} />
+      <MapLocation />
+      <Box sx={{ mt: 14 }} />
     </Box>
   );
 };

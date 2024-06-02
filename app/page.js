@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Box } from "@mui/material";
@@ -11,8 +12,15 @@ import Learning from "@/components/home/learning";
 import Volunteer from "@/components/home/volunteer";
 import Achievements from "@/components/home/achievements";
 import Footer from "@/components/footer";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { resetLoginData } from "@/store/loginData";
 
 export default function Home() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(resetLoginData());
+  }, []);
   return (
     <Box>
       <CustomAppbar />

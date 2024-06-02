@@ -22,7 +22,7 @@ const ContactModes = () => {
           type={"location"}
           name={"Location"}
           content1={
-            "NO.195, BIG STREET, VILLAGAM VILLAGE, PANDUR POST, THIRUKAZHUKUNDRAM TALUK, KANDCHIPURAM DISTRICT - 603109"
+            "No.195, Big Street, Villagam Village, Pandur Post, Thirukazhukundram TALUK, Kanchipuram District - 603109"
           }
         />
       </Box>

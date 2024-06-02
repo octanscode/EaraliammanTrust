@@ -12,6 +12,7 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import CurrActiveNavItemReducer from "./currActiveNavItem";
+import LoginDataReducer from "./loginData";
 require("dotenv").config({ path: ".env" });
 
 const persistConfig = {
@@ -22,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   CurrActiveNavItem: CurrActiveNavItemReducer,
+  LoginData: LoginDataReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

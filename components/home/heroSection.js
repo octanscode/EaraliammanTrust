@@ -32,15 +32,15 @@ const HeroSection = () => {
       }}
     >
       <Box sx={{ width: "100%", display: "flex", height: "100%" }}>
-        <Box sx={{ width: "50%", height: "100%" }}>hello</Box>
         <Box
           sx={{
-            width: "50%",
+            width: "100%",
             display: "flex",
-            alignItems: "center",
+            alignItems: "flex-end",
             height: "100%",
             justifyContent: "center",
             flexDirection: "column",
+            pr: 6,
           }}
         >
           <Typography variant="h1" sx={{ color: "white" }}>

@@ -14,13 +14,24 @@
     "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.18",
+    "@mui/x-data-grid": "^7.6.1",
+    "@mui/x-date-pickers": "^7.6.1",
+    "connect-mongo": "^5.1.0",
+    "connect-mongodb-session": "^5.0.0",
+    "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
+    "express-session": "^1.18.0",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.1",
     "next": "^13.4.7",
+    "next-iron-session": "^4.2.0",
+    "next-session": "^4.0.5",
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^8.1.3",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^3.1.0",
-    "reduxjs-toolkit-persist": "^7.2.1"
+    "reduxjs-toolkit-persist": "^7.2.1",
+    "request": "^2.88.2"
   }
 }
