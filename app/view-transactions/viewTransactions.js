@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import DataTable from "./dataTable";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import AddTransactionPopup from "./addTransactionPopUp";
+import AddEventFAB from "@/components/addEventFAB";
 
 const FetchTransactionHistory = async () => {
   try {
@@ -101,6 +102,7 @@ const ViewTransactions = () => {
             selectionModel={selectionModel}
           />
         )}
+        <AddEventFAB />
         <Box sx={{ mt: 20 }} />
       </Box>
     </Box>

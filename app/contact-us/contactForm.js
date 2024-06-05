@@ -1,13 +1,51 @@
 "use client";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import ContactFormImage from "../../public/asset/image/contactus.jpg";
 import { PRIMARY_BLUE } from "@/constants";
+import emailjs from "@emailjs/browser";
+import ConfettiPopup from "@/components/confettiPopup";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const form = useRef();
+  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = React.useState(true);
+
+  function SuccessPopupOpenCallback(value) {
+    setIsSuccessPopupOpen(value);
+  }
+
+  const resetForm = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log("EMAIL JS MAIL SUCCESS!");
+          setIsSuccessPopupOpen(true);
+          resetForm();
+        },
+        (error) => {
+          console.log("EMAIL JS MAIL FAILED...", error.text);
+          setIsSuccessPopupOpen(false);
+        }
+      );
+  };
   return (
     <Box sx={{ width: "100%", display: "flex", justifyContent: "center" }}>
       <Box
@@ -31,7 +69,16 @@ const ContactForm = () => {
             }}
           />
         </Box>
-        <Box sx={{ width: "40%" }}>
+        <Box
+          sx={{ width: "40%" }}
+          component={"form"}
+          onSubmit={handleSubmit}
+          ref={form}
+        >
+          <ConfettiPopup
+            open={isSuccessPopupOpen}
+            SuccessPopupOpenCallback={SuccessPopupOpenCallback}
+          />
           <Typography variant="h2" sx={{ color: "black", textAlign: "center" }}>
             Contact Us
           </Typography>
@@ -41,6 +88,7 @@ const ContactForm = () => {
             type="text"
             variant="standard"
             value={name}
+            name="contact_name"
             onChange={(e) => setName(e.target.value)}
             sx={{
               mt: 5,
@@ -62,6 +110,7 @@ const ContactForm = () => {
             required
             placeholder="Email*"
             variant="standard"
+            name="contact_email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             sx={{
@@ -79,6 +128,7 @@ const ContactForm = () => {
           <TextField
             id="filled-multiline-static"
             placeholder="Message*"
+            name="message"
             multiline
             rows={8}
             variant="standard"
@@ -107,6 +157,7 @@ const ContactForm = () => {
             }}
           />
           <Button
+            type="submit"
             sx={{
               width: "100%",
               mt: 4,
