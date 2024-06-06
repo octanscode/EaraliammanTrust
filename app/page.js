@@ -9,7 +9,6 @@ import Initiatives from "@/components/home/initiatives";
 import Agriculture from "@/components/home/agriculture";
 import PollutionFreeEnv from "@/components/home/pollutionFreeEnv";
 import Learning from "@/components/home/learning";
-import Volunteer from "@/components/home/volunteer";
 import Achievements from "@/components/home/achievements";
 import Footer from "@/components/footer";
 import { useDispatch } from "react-redux";
@@ -32,8 +31,6 @@ export default function Home() {
       <Learning />
       <Box sx={{ mt: 12 }} />
       <PollutionFreeEnv />
-      <Box sx={{ mt: 12 }} />
-      <Volunteer />
       <Box sx={{ mt: 12 }} />
       <Achievements />
       <Box sx={{ mt: 24 }} />

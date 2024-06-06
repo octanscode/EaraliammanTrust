@@ -8,7 +8,6 @@ const Volunteer = () => {
       component={"div"}
       sx={{
         width: "100%",
-        backgroundColor: "#041F54",
         display: "flex",
         justifyContent: "center",
         p: 10,

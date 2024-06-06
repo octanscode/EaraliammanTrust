@@ -11,7 +11,7 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const form = useRef();
-  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = React.useState(true);
+  const [isSuccessPopupOpen, setIsSuccessPopupOpen] = React.useState(false);
 
   function SuccessPopupOpenCallback(value) {
     setIsSuccessPopupOpen(value);
