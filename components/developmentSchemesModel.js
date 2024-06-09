@@ -11,7 +11,7 @@ const DevelopmentSchemesModel = ({ src, name, desc }) => {
         width: "100%",
         borderRadius: "1rem",
         backgroundColor: "white",
-        height: { xs: "62vh", lg: "82vh" },
+        height: { xs: "56vh", lg: "82vh" },
       }}
     >
       <Box
