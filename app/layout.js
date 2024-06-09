@@ -463,12 +463,6 @@ lightTheme.typography.caption = {
   },
 };
 
-export const metadata = {
-  title: "Eraliamman Charitable Trust",
-  description:
-    "Eraliamman Charitable Trust focuses on improving the quality of life for the urban and rural poor in Tamil Nadu, India. The mission is to create equitable living environments where all residents have access to health, education, essential infrastructure services, and livelihood options.",
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>

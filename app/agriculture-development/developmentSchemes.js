@@ -1,8 +1,9 @@
+"use client";
 import DevelopmentSchemesModel from "@/components/developmentSchemesModel";
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import AgricultureClinicImage from "../../public/asset/image/clinic.jpg";
-import TrainingForFarmersImage from "../../public/asset/image/farmer-training.jpg";
+import TrainingForFarmersImage from "../../public/asset/image/organic-farming.png";
 import AgricultureTrainingImage from "../../public/asset/image/agriculture-training.webp";
 import OrganicFarmingImage from "../../public/asset/image/organic-farming.png";
 import PreventAdulterationImage from "../../public/asset/image/Food-Adulteration.jpg";
