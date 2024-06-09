@@ -24,9 +24,15 @@ const HeroSection = () => {
       component={"div"}
       sx={{
         width: "100%",
-        height: "100vh",
+        height: {
+          xs: "40vh",
+          sm: "100vh",
+          md: "100vh",
+          lg: "100vh",
+          xl: "100vh",
+        },
         backgroundImage: `url(${HeroBannerImage.src})`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundColor: "#E0E0E0",
       }}
@@ -37,23 +43,25 @@ const HeroSection = () => {
           display: "flex",
           height: "100%",
           justifyContent: "flex-end",
+          backgroundColor: "rgba(0,0,0,0.4)",
         }}
       >
         <Box
           sx={{
-            width: "50%",
+            width: "100%",
             display: "flex",
-            alignItems: "center",
+            alignItems: { xs: "center", lg: "center" },
             height: "100%",
             justifyContent: "center",
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
             flexDirection: "column",
-            pr: 4,
+            p: { xs: 2, lg: 15 },
           }}
         >
-          <Typography variant="h2" sx={{ color: "white" }}>
-            Empowering Minds, Shaping Futures
+          <Typography variant="h1" sx={{ color: "white" }}>
+            Empowering Future Minds
           </Typography>
-          <Typography variant="subtitle1" sx={{ color: "white" }}>
+          <Typography variant="subtitle1" sx={{ color: "white", mt: 1 }}>
             Committed to Lifelong Learning
           </Typography>
         </Box>

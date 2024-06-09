@@ -16,7 +16,13 @@ const OurWorks = () => {
       <Typography variant="h3" sx={{ mb: 4 }}>
         Our Works
       </Typography>
-      <Box sx={{ mb: 4, height: "80vh", width: "40vw" }}>
+      <Box
+        sx={{
+          mb: 4,
+          height: { xs: "50vh", lg: "80vh" },
+          width: { xs: "100%", lg: "40vw" },
+        }}
+      >
         <img
           src={LearningImage.src}
           alt={"work-image"}

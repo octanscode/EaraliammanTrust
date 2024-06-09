@@ -5,11 +5,10 @@ const EventModel = ({ src, name, content, date, id }) => {
   return (
     <Paper
       sx={{
-        width: "20%",
-        height: "52vh",
+        height: { xs: "48vh", lg: "52vh" },
         cursor: "pointer",
-        mr: 3.5,
-        ml: 3.5,
+        mr: { xs: 1.5, lg: 3.5 },
+        ml: { xs: 1.5, lg: 3.5 },
         mb: 5,
       }}
       component={"div"}

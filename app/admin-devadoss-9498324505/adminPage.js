@@ -93,7 +93,7 @@ const AdminPage = () => {
         variant="outlined"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        sx={{ backgroundColor: "white", width: "50%" }}
+        sx={{ backgroundColor: "white", width: { xs: "90%", lg: "50%" } }}
         required
       />
       <TextField
@@ -105,14 +105,17 @@ const AdminPage = () => {
         onChange={(e) => seOtp(e.target.value)}
         sx={{
           backgroundColor: "white",
-          width: "50%",
+          width: { xs: "90%", lg: "50%" },
           mt: 2,
           display: isOtpOpen ? "flex" : "none",
         }}
       />
       <Button
         variant="standard"
-        sx={{ display: isOtpOpen ? "flex" : "none", width: "50%" }}
+        sx={{
+          display: isOtpOpen ? "flex" : "none",
+          width: { xs: "90%", lg: "50%" },
+        }}
         onClick={SendOtp}
       >
         Resend OTP
@@ -125,7 +128,7 @@ const AdminPage = () => {
         sx={{
           backgroundColor: "black",
           color: "white",
-          width: "50%",
+          width: { xs: "90%", lg: "50%" },
           mt: 2,
           pt: 1.5,
           pb: 1.5,

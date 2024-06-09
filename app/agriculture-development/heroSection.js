@@ -24,7 +24,13 @@ const HeroSection = () => {
       component={"div"}
       sx={{
         width: "100%",
-        height: "100vh",
+        height: {
+          xs: "40vh",
+          sm: "100vh",
+          md: "100vh",
+          lg: "100vh",
+          xl: "100vh",
+        },
         backgroundImage: `url(${HeroBannerImage.src})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -43,17 +49,21 @@ const HeroSection = () => {
           sx={{
             width: "100%",
             display: "flex",
-            alignItems: "flex-end",
+            alignItems: { xs: "center", lg: "flex-end" },
             height: "100%",
             justifyContent: "center",
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
             flexDirection: "column",
-            p: 15,
+            p: { xs: 2, lg: 15 },
           }}
         >
-          <Typography variant="h2" sx={{ color: "white" }}>
+          <Typography variant="h3" sx={{ color: "white" }}>
             Cultivating Innovation in Agriculture
           </Typography>
-          <Typography variant="subtitle1" sx={{ color: "white" }}>
+          <Typography
+            variant="subtitle1"
+            sx={{ color: "white", textAlign: "center", mt: 1 }}
+          >
             Growing a Sustainable Future through Responsible Practices
           </Typography>
         </Box>

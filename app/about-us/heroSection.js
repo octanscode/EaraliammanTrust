@@ -24,7 +24,13 @@ const HeroSection = () => {
       component={"div"}
       sx={{
         width: "100%",
-        height: "100vh",
+        height: {
+          xs: "35vh",
+          sm: "100vh",
+          md: "100vh",
+          lg: "100vh",
+          xl: "100vh",
+        },
         backgroundImage: `url(${HeroBannerImage.src})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -36,21 +42,28 @@ const HeroSection = () => {
           sx={{
             width: "100%",
             display: "flex",
-            alignItems: "center",
+            alignItems: { xs: "center", lg: "center" },
             height: "100%",
             justifyContent: "center",
             flexDirection: "column",
-            backgroundColor: "#060606",
-            opacity: 0.68,
-            p: 15,
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            p: { xs: 1, lg: 6 },
           }}
         >
-          <Typography variant="h1" sx={{ color: "wheat", opacity: 1 }}>
+          <Typography variant="h1" sx={{ color: "white", opacity: 1 }}>
             About Us
           </Typography>
           <Typography
             variant="h5"
-            sx={{ color: "wheat", opacity: 1, width: "100%" }}
+            sx={{
+              color: "white",
+              opacity: 1,
+              width: "100%",
+              textAlign: "center",
+              width: { xs: "100%", lg: "50%" },
+              textAlign: "center",
+              mt: 1.5,
+            }}
           >
             An international charity for children, we work in almost 100
             countries where the need is greatest, supporting children.

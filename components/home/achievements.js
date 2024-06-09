@@ -9,15 +9,14 @@ const Achievements = () => {
       component={"div"}
       sx={{
         backgroundImage: `url(${AchievementImage.src})`,
-        height: "60vh",
+        height: { xs: "40vh", lg: "60vh" },
         backgroundSize: "cover",
         position: "relative",
       }}
     >
       <Box
         sx={{
-          backgroundColor: "#060606",
-          opacity: 0.8,
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
           height: "100%",
           width: "100%",
           display: "flex",
@@ -29,7 +28,10 @@ const Achievements = () => {
         <Typography variant="h2" sx={{ color: "white" }}>
           Achievements
         </Typography>
-        <Typography sx={{ color: "white" }}>
+        <Typography
+          variant="subtitle2"
+          sx={{ color: "white", textAlign: "center", p: 2 }}
+        >
           The Eraliamman team has impacted lives through sustainable initiatives
           and dedicated community efforts
         </Typography>

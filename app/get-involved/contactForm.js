@@ -63,7 +63,7 @@ const ContactForm = () => {
       );
   };
   return (
-    <Container style={{ marginTop: "20px" }}>
+    <Container sx={{ mt: { xs: "0px", lg: "20px" } }}>
       <Typography
         variant="h4"
         gutterBottom

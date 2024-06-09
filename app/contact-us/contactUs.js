@@ -7,7 +7,7 @@ import MapLocation from "./mapLocation";
 
 const ContactUs = () => {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "#f5f5f5" }}>
       <HeroSection />
       <Box sx={{ mt: 14 }} />
       <ContactForm />

@@ -6,7 +6,7 @@ import OurWorks from "./ourWorks";
 
 const PollFreeEnv = () => {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "#f5f5f5" }}>
       <HeroSection />
       <DevelopmentSchemes />
       <OurWorks />

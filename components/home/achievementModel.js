@@ -7,18 +7,17 @@ const AchievementModel = ({ number, name }) => {
       sx={{
         backgroundColor: "#083792",
         color: "white",
-        height: "20vh",
-        width: 300,
-        opacity: 1,
+        height: { xs: "14vh", lg: "20vh" },
+        width: { xs: 109, lg: 300 },
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
         justifyContent: "center",
-        p: 2,
+        p: { xs: 1, lg: 2 },
       }}
     >
       <Typography variant="h2">{number}</Typography>
-      <Typography variant="body1" sx={{ mt: 1.5 }}>
+      <Typography variant="body2" sx={{ mt: 1.5 }}>
         {name}
       </Typography>
     </Paper>

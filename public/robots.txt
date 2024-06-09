@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /admin-devadoss-9498324505/

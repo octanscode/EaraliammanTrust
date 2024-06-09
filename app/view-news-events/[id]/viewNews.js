@@ -54,7 +54,7 @@ const ViewNews = ({ data }) => {
         mb: 8,
       }}
     >
-      <Box sx={{ width: "80%" }}>
+      <Box sx={{ width: { xs: "100%", lg: "80%" } }}>
         <Typography variant="h2" sx={{ color: "black", mt: 1 }}>
           {eventName}
         </Typography>

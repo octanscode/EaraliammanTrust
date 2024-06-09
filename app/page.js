@@ -14,11 +14,13 @@ import Footer from "@/components/footer";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { resetLoginData } from "@/store/loginData";
+import { resetCurrActiveNavItem } from "@/store/currActiveNavItem";
 
 export default function Home() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(resetLoginData());
+    dispatch(resetCurrActiveNavItem());
   }, []);
   return (
     <Box>

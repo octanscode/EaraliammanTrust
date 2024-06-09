@@ -1,19 +1,26 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
 import "./loader.css";
-import { Box } from "@mui/material";
 
-const Loader = () => {
+const Loader = ({ isLoadingScreenOpen }) => {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <div class="loader"></div>
+    <Box sx={{ display: isLoadingScreenOpen ? "flex" : "none" }}>
+      <div className="backdrop">
+        <Box
+          className="spinner-container"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {/* <Typography variant="h4" sx={{ mb: 1, fontWeight: 700 }}>
+            Loading...
+          </Typography> */}
+          <span className="loader"></span>
+        </Box>
+      </div>
     </Box>
   );
 };

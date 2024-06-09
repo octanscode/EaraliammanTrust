@@ -8,7 +8,6 @@ const OpportunityCard = ({ name, content, bgColor }) => {
         backgroundColor: bgColor,
         ml: 1,
         mr: 1,
-        width: "18%",
         p: 2,
         pt: 2,
         pb: 2,

@@ -14,6 +14,7 @@ import AlertMessage from "@/components/alert";
 import { PRIMARY_BLUE } from "@/constants";
 import GetFirebaseStoragePath from "@/utilities/getFirebaseStoragePath";
 import SuccessAlertMessage from "@/components/successAlert";
+import Loader from "@/components/loader";
 
 const VisuallyHiddenInput = styled("input")({
   clip: "rect(0 0 0 0)",
@@ -158,6 +159,7 @@ const AddNewsEvent = () => {
         return;
       }
       setErrorMsg("");
+      setIsLoadingScreenOpen(true);
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/addEvent`,
         {
@@ -188,27 +190,37 @@ const AddNewsEvent = () => {
         console.log("Event Added Successfully!");
         setSuccessMsg("Event Added Successfully!");
         setTimeout(window.location.reload(), 2000);
+        setIsLoadingScreenOpen(false);
       } else {
         console.error(responseBody.message);
+        setIsLoadingScreenOpen(false);
       }
-    } catch (error) {}
+    } catch (error) {
+      setIsLoadingScreenOpen(false);
+      console.log(error);
+    }
   };
 
   return (
     <Box
       sx={{
         width: "100%",
-        p: 2,
+        p: { xs: 0, lg: 2 },
         display: "flex",
         justifyContent: "center",
-        pb: 6,
-        pt: 6,
+        pb: { xs: 1, lg: 6 },
+        pt: { xs: 1, lg: 6 },
+        position: "relative",
       }}
     >
       <Box
         component={"form"}
         onSubmit={handleSubmit}
-        sx={{ width: "80%", display: "flex", flexDirection: "column" }}
+        sx={{
+          width: { xs: "95%", lg: "80%" },
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
         <Typography variant="h3" sx={{ textAlign: "center" }}>
           Event Details
@@ -371,6 +383,7 @@ const AddNewsEvent = () => {
         >
           Add Event
         </Button>
+        <Loader isLoadingScreenOpen={isLoadingScreenOpen} />
       </Box>
     </Box>
   );

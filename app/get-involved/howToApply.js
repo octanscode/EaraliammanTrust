@@ -7,13 +7,19 @@ const HowToApply = () => {
       sx={{
         backgroundColor: "#f5f5f5",
         width: "100%",
-        p: 4,
+        p: { xs: 2, lg: 4 },
         display: "flex",
         justifyContent: "center",
         backgroundColor: "#cae1e6",
       }}
     >
-      <Box sx={{ backgroundColor: "#cae1e6", width: "50%", p: 4 }}>
+      <Box
+        sx={{
+          backgroundColor: "#cae1e6",
+          width: { xs: "90%", lg: "50%" },
+          p: 4,
+        }}
+      >
         <Typography variant="h2" sx={{ textAlign: "center", mb: 3 }}>
           How to Apply
         </Typography>

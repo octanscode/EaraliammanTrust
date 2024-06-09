@@ -6,7 +6,14 @@ import { Button } from "@mui/material";
 const columns = [
   { field: "transactionId", headerName: "Transaction ID", width: 200 },
   { field: "date", headerName: "Date", width: 100 },
-  { field: "amount", headerName: "Amount", width: 170, type: "number" },
+  {
+    field: "amount",
+    headerName: "Amount",
+    width: 170,
+    type: "number",
+    headerAlign: "center",
+    align: "center",
+  },
   {
     field: "receipientName",
     headerName: "Receipient Name",

@@ -11,16 +11,22 @@ const ContactModel = ({ type, name, content1 }) => {
       elevation={3}
       sx={{
         color: "white",
-        backgroundColor: PRIMARY_BLUE,
-        width: "30%",
+        backgroundColor: "white",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         p: 3,
+        height: { xs: "10rem", lg: "10rem" },
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          color: "black",
+        }}
+      >
         {type === "call" ? (
           <CallIcon sx={{ fontSize: "1.7rem" }} />
         ) : type === "email" ? (
@@ -32,7 +38,7 @@ const ContactModel = ({ type, name, content1 }) => {
           {name}
         </Typography>
       </Box>
-      <Typography variant="subtitle2" sx={{ mt: 2, height: "6rem" }}>
+      <Typography variant="subtitle2" sx={{ mt: 2, color: "black" }}>
         {content1}
       </Typography>
     </Paper>

@@ -13,7 +13,6 @@ import {
 import storage from "redux-persist/lib/storage";
 import CurrActiveNavItemReducer from "./currActiveNavItem";
 import LoginDataReducer from "./loginData";
-require("dotenv").config({ path: ".env" });
 
 const persistConfig = {
   key: "root",
@@ -30,7 +29,7 @@ const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
-  devTools: process.env.NEXT_PUBLIC_ENVIRONMENT !== "PRODUCTION" ? true : false,
+  devTools: process.env.NODE_ENV !== "PRODUCTION" ? true : false,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

@@ -8,11 +8,13 @@ import { GetIsAdminLoggedIn } from "@/selector/loginDataSelector";
 
 const page = () => {
   const isLoggedIn = GetIsAdminLoggedIn();
+
   useLayoutEffect(() => {
     if (!isLoggedIn) {
       window.location.href = "/";
     }
   }, []);
+
   return (
     <Box>
       <CustomAppbar bgColor={"#f5f5f5"} />

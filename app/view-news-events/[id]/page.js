@@ -5,6 +5,7 @@ import { Box, Toolbar, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import ViewNews from "./viewNews";
 import Loader from "@/components/loader";
+import PageLoader from "@/components/pageLoader";
 
 const FetchUpdates = async (params) => {
   try {
@@ -52,7 +53,7 @@ const page = ({ params }) => {
     <Box>
       <CustomAppbar bgColor={"#f5f5f5"} />
       <Toolbar />
-      {data ? <ViewNews data={data} /> : <Loader />}
+      {data ? <ViewNews data={data} /> : <PageLoader />}
       <Footer />
     </Box>
   );

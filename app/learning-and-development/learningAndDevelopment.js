@@ -6,7 +6,7 @@ import HeroSection from "./heroSection";
 
 const LearningAndDevelopment = () => {
   return (
-    <Box>
+    <Box sx={{ backgroundColor: "#f5f5f5" }}>
       <HeroSection />
       <DevelopmentSchemes />
       <OurWorks />

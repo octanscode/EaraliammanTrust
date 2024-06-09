@@ -10,13 +10,16 @@ const Content = () => {
     <Box
       sx={{
         width: "100%",
-        p: 4,
+        p: { xs: 2, lg: 4 },
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
       }}
     >
-      <Typography variant="h3" sx={{ textAlign: "center", width: "80%" }}>
+      <Typography
+        variant="h3"
+        sx={{ textAlign: "center", width: { xs: "90%", lg: "80%" } }}
+      >
         Join us in our mission to empower communities and create sustainable
         change. Your involvement can make a significant impact in the lives of
         many.
@@ -24,7 +27,7 @@ const Content = () => {
       <Opportunities />
       <Box sx={{ mt: 8 }} />
       <HowToApply />
-      <Box sx={{ mt: 16 }} />
+      <Box sx={{ mt: { xs: 8, lg: 16 } }} />
       <ContactForm />
     </Box>
   );

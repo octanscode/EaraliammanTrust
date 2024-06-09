@@ -28,6 +28,23 @@ const ProjectsOnHover = () => {
     setHoveredOnItem(newArray);
   };
 
+  function handleLinks(index) {
+    switch (index) {
+      case 0:
+        window.location.href = "/agriculture-development";
+        break;
+      case 1:
+        window.location.href = "/pollution-free-environment";
+        break;
+      case 2:
+        window.location.href = "/learning-and-development";
+        break;
+      default:
+        window.location.href = "/";
+        break;
+    }
+  }
+
   useEffect(() => {
     console.log("Hovered on Item is ", hoveredOnItem);
   }, [hoveredOnItem]);
@@ -58,6 +75,7 @@ const ProjectsOnHover = () => {
           >
             {items.map((item, index) => (
               <Button
+                onClick={() => handleLinks(index)}
                 disableRipple
                 key={index}
                 onMouseEnter={() => SetHoveredOnItemValue(true, index)}

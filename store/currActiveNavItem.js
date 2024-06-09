@@ -1,3 +1,4 @@
+"use client";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -9,9 +10,14 @@ export const CurrActiveNavItem = createSlice({
   initialState,
   reducers: {
     setCurrActiveNavItem: (state, action) => {
+      console.log(
+        "Inside setCurrActiveNavItem reducer and payload is ",
+        action.payload
+      );
       state.activeNavIndex = action.payload;
     },
     resetCurrActiveNavItem: () => {
+      console.log("Inside resetCurrActiveNavItem reducer");
       return { ...initialState };
     },
   },

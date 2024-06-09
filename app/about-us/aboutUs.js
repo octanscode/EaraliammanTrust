@@ -1,3 +1,4 @@
+"use client";
 import { Box } from "@mui/material";
 import React from "react";
 import HeroSection from "./heroSection";
@@ -10,7 +11,7 @@ const AboutUs = () => {
   return (
     <Box>
       <HeroSection />
-      <Box sx={{ mt: 10 }} />
+      <Box sx={{ mt: { xs: 5, lg: 10 } }} />
       <Description />
       <Box sx={{ mt: 10 }} />
       <Mission />

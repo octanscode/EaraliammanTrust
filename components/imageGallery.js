@@ -18,7 +18,7 @@ const ImageGallerySlider = ({ images }) => {
   return (
     <Box
       sx={{
-        width: "90%",
+        width: { xs: "100%", lg: "90%" },
         backgroundColor: "white",
         display: "flex",
         justifyContent: "center",

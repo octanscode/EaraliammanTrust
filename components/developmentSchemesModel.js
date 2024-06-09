@@ -8,15 +8,19 @@ const DevelopmentSchemesModel = ({ src, name, desc }) => {
         p: 2,
         display: "flex",
         flexDirection: "column",
-        width: "30%",
+        width: "100%",
         borderRadius: "1rem",
-        backgroundColor: "#041F54",
-        mt: 1,
-        mb: 10,
-        height: "82vh",
+        backgroundColor: "white",
+        height: { xs: "64vh", lg: "82vh" },
       }}
     >
-      <Box sx={{ width: "100%", height: "70%", borderRadius: "1rem" }}>
+      <Box
+        sx={{
+          width: "100%",
+          height: { xs: "55%", lg: "70%" },
+          borderRadius: "1rem",
+        }}
+      >
         <img
           src={src}
           alt={name}
@@ -28,11 +32,20 @@ const DevelopmentSchemesModel = ({ src, name, desc }) => {
           }}
         />{" "}
       </Box>
-      <Box sx={{ color: "white", height: "10rem" }}>
-        <Typography variant="h6" sx={{ textAlign: "center", mt: 2, mb: 2 }}>
+      <Box sx={{ color: "white", height: { xs: "45%", lg: "30%" } }}>
+        <Typography
+          variant="h6"
+          sx={{
+            textAlign: "center",
+            mt: 2,
+            mb: 2,
+            color: "black",
+            fontWeight: 700,
+          }}
+        >
           {name}
         </Typography>
-        <Typography sx={{ textAlign: "left", color: "#ffffffb5" }}>
+        <Typography variant="body1" sx={{ textAlign: "left", color: "black" }}>
           {desc}
         </Typography>
       </Box>

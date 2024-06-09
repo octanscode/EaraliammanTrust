@@ -8,6 +8,7 @@ const Description = () => {
       <Box
         sx={{
           display: "flex",
+          flexDirection: { xs: "column", lg: "row" },
           width: "90%",
           justifyContent: "space-between",
           pt: 4,
@@ -16,19 +17,21 @@ const Description = () => {
       >
         <Box
           sx={{
-            width: "45%",
+            width: { xs: "100%", lg: "45%" },
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
             position: "relative",
+            mb: { xs: 4, lg: 0 },
           }}
         >
           <Box
             sx={{
-              height: "80vh",
+              height: { xs: "60vh", lg: "80vh" },
               width: "100%",
               backgroundColor: "gainsboro",
               pt: 3,
+              objectFit: { xs: "cover", lg: "contain" },
             }}
           >
             <img
@@ -37,7 +40,7 @@ const Description = () => {
               style={{
                 height: "100%",
                 width: "100%",
-                objectFit: "contain",
+                objectFit: "inherit",
               }}
             />
           </Box>
@@ -66,7 +69,7 @@ const Description = () => {
             </Typography>
           </Box>
         </Box>
-        <Box sx={{ width: "50%" }}>
+        <Box sx={{ width: { xs: "100%", lg: "50%" } }}>
           <Box>
             <Typography variant="h2" sx={{ color: "#041F54" }}>
               About Earliamman Trust

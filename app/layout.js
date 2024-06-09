@@ -1,13 +1,13 @@
 "use client";
-import { Inter, Noto_Sans } from "next/font/google";
+import { Inter, Karla, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import { Provider } from "react-redux";
 import { persistor, store } from "../store/index";
 
-const inter = Noto_Sans({
+const inter = Karla({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-lexend",
 });
@@ -62,7 +62,7 @@ lightTheme.typography.h1 = {
     fontSize: "1.3rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "1.35rem",
+    fontSize: "1.6rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "1.4rem",
@@ -99,7 +99,7 @@ lightTheme.typography.h2 = {
     fontSize: "1.15rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "1.95rem",
+    fontSize: "1.4rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "1.45rem",
@@ -136,7 +136,7 @@ lightTheme.typography.h3 = {
     fontSize: "1.1rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "1.35rem",
+    fontSize: "1.2rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "1.35rem",
@@ -247,7 +247,7 @@ lightTheme.typography.h6 = {
     fontSize: "0.85rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "0.9rem",
+    fontSize: "1rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "0.9rem",
@@ -321,7 +321,7 @@ lightTheme.typography.subtitle2 = {
     fontSize: "0.85rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "0.85rem",
+    fontSize: "0.9rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "0.9rem",
@@ -358,7 +358,7 @@ lightTheme.typography.body1 = {
     fontSize: "0.8rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "0.75rem",
+    fontSize: "0.9rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "0.85rem",
@@ -395,7 +395,7 @@ lightTheme.typography.body2 = {
     fontSize: "0.65rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "0.7rem",
+    fontSize: "0.75rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "0.8rem",
@@ -432,7 +432,7 @@ lightTheme.typography.caption = {
     fontSize: "0.55rem",
   },
   [lightTheme.breakpoints.up("xssm")]: {
-    fontSize: "0.75rem",
+    fontSize: "0.6rem",
   },
   [lightTheme.breakpoints.up("xsm")]: {
     fontSize: "0.8rem",
@@ -463,14 +463,26 @@ lightTheme.typography.caption = {
   },
 };
 
+export const metadata = {
+  title: "Eraliamman Charitable Trust",
+  description:
+    "Eraliamman Charitable Trust focuses on improving the quality of life for the urban and rural poor in Tamil Nadu, India. The mission is to create equitable living environments where all residents have access to health, education, essential infrastructure services, and livelihood options.",
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={inter.className}>
       <head>
+        <title>Eraliamman Charitable Trust</title>
+        <meta
+          name="description"
+          content="Eraliamman Charitable Trust focuses on improving the quality of life for the urban and rural poor in Tamil Nadu, India. The mission is to create equitable living environments where all residents have access to health, education, essential infrastructure services, and livelihood options.!"
+        />
         <meta
           name="viewport"
           content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"
         />
+        <link rel="icon" href="/AppLogo.png" sizes="any" />
       </head>
       <ThemeProvider theme={lightTheme}>
         <CssBaseline />

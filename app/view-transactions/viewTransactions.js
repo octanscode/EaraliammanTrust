@@ -5,6 +5,7 @@ import DataTable from "./dataTable";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import AddTransactionPopup from "./addTransactionPopUp";
 import AddEventFAB from "@/components/addEventFAB";
+import AlertMessage from "@/components/alert";
 
 const FetchTransactionHistory = async () => {
   try {
@@ -33,12 +34,14 @@ const ViewTransactions = () => {
   const [data, setData] = useState("");
   const [selectedTransactionIds, setSelectedTransactionIds] = useState([]);
   const [selectionModel, setSelectionModel] = React.useState([]);
+  const [errorMsg, setErrorMsg] = useState("");
   console.log("Data is ", data);
 
   console.log("selectedTransactionIds Data is ", selectedTransactionIds);
 
   useEffect(() => {
     console.log("Inside use effect of ViewTransactions.js");
+    setErrorMsg("");
     FetchTransactionHistory()
       .then((fetchedData) => {
         setData(fetchedData);
@@ -53,6 +56,11 @@ const ViewTransactions = () => {
 
   const handleDelete = async () => {
     try {
+      if (selectedTransactionIds.length === 0) {
+        setErrorMsg("Please select atleast one item to continue..");
+        return;
+      }
+      setErrorMsg("");
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/deleteTransactions`,
         {
@@ -78,7 +86,7 @@ const ViewTransactions = () => {
     <Box
       sx={{ p: 1, width: "100%", display: "flex", justifyContent: "center" }}
     >
-      <Box sx={{ width: "90%", minHeight: "90vh" }}>
+      <Box sx={{ width: { xs: "97%", lg: "90%" }, minHeight: "90vh" }}>
         <Typography variant="h4" sx={{ mb: 2, mt: 2 }}>
           Transaction History
         </Typography>
@@ -102,6 +110,7 @@ const ViewTransactions = () => {
             selectionModel={selectionModel}
           />
         )}
+        <AlertMessage msg={errorMsg} />
         <AddEventFAB />
         <Box sx={{ mt: 20 }} />
       </Box>

@@ -21,8 +21,8 @@ const OurWorks = () => {
         sx={{
           mb: 4,
           display: "flex",
-          width: "80%",
-          height: "80vh",
+          width: { xs: "100%", lg: "80%" },
+          height: { xs: "40vh", lg: "80vh" },
           justifyContent: "space-between",
         }}
       >

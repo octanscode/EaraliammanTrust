@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import { Box, Toolbar } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import NewsAndEvents from "./newsAndEvents";
+import { useDispatch } from "react-redux";
+import { setCurrActiveNavItem } from "@/store/currActiveNavItem";
 
 const FetchAllEvents = async () => {
   try {
@@ -32,8 +34,11 @@ const page = () => {
   const [data, setData] = useState("");
   console.log("Data is ", data);
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     console.log("Inside use effect of News and Events.js");
+    dispatch(setCurrActiveNavItem(5));
     FetchAllEvents()
       .then((fetchedData) => {
         setData(fetchedData);

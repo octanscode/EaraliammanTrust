@@ -8,7 +8,7 @@ const Agriculture = () => {
       component={"div"}
       sx={{
         width: "100%",
-        height: "75vh",
+        height: { xs: "55vh", lg: "75vh" },
         backgroundImage: `url(${AgriImage.src})`,
         backgroundSize: "cover",
         display: "flex",
@@ -17,19 +17,21 @@ const Agriculture = () => {
     >
       <Box
         sx={{
-          width: "38%",
-          p: 4,
-          backgroundColor: "#060606",
-          opacity: 0.8,
+          width: { xs: "100%", lg: "38%" },
+          p: { xs: 2, lg: 4 },
+          backgroundColor: "rgba(0, 0, 0, 0.6)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <Typography variant="h2" sx={{ color: "white" }}>
+        <Typography variant="h3" sx={{ color: "white" }}>
           Agricultural Development
         </Typography>
-        <Typography variant="subtitle2" sx={{ color: "white", mt: 4, mb: 2 }}>
+        <Typography
+          variant="subtitle2"
+          sx={{ color: "white", mt: { xs: 2, lg: 4 }, mb: { xs: 2, lg: 2 } }}
+        >
           Earliamman Trust focuses on agricultural welfare, offering clinics for
           expert advice, tree planting for environmental restoration, training
           programs for modern practices, and organic food manufacturing. Sales
@@ -37,23 +39,25 @@ const Agriculture = () => {
           services streamline logistics, manpower, and marketing, aiming for
           sustainable rural development.
         </Typography>
-        <Button
-          sx={{
-            backgroundColor: "white",
-            alignSelf: "flex-start",
-            opacity: 1,
-            textTransform: "capitalize",
-            color: "black",
-            "&:hover": {
+        <a href="/agriculture-development">
+          <Button
+            sx={{
               backgroundColor: "white",
+              alignSelf: "flex-start",
               opacity: 1,
-              color: "black",
               textTransform: "capitalize",
-            },
-          }}
-        >
-          <Typography>Learn More</Typography>
-        </Button>
+              color: "black",
+              "&:hover": {
+                backgroundColor: "white",
+                opacity: 1,
+                color: "black",
+                textTransform: "capitalize",
+              },
+            }}
+          >
+            <Typography>Learn More</Typography>
+          </Button>
+        </a>
       </Box>
     </Box>
   );

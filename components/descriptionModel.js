@@ -14,7 +14,6 @@ const DescriptionModel = ({ backgroundColor, topic, description, icon }) => {
         alignItems: "center",
         justifyContent: "center",
         // padding: 2,
-        width: 350,
         position: "relative",
         borderRadius: "16px",
       }}
@@ -29,8 +28,8 @@ const DescriptionModel = ({ backgroundColor, topic, description, icon }) => {
       >
         <Box
           sx={{
-            height: "10rem",
-            width: "18rem",
+            height: { xs: "8rem", lg: "10rem" },
+            width: { xs: "18rem", lg: "18rem" },
             backgroundColor: backgroundColor,
             position: "absolute",
             top: "50%",
@@ -69,6 +68,7 @@ const DescriptionModel = ({ backgroundColor, topic, description, icon }) => {
             paddingX: 2,
             backgroundColor: "#fff",
             position: "relative",
+            height: { xs: "13rem", lg: "17rem" },
           }}
         >
           <CardContent>
@@ -80,7 +80,9 @@ const DescriptionModel = ({ backgroundColor, topic, description, icon }) => {
             >
               {topic}
             </Typography>
-            <Typography variant="body2">{description}</Typography>
+            <Typography variant="body2" sx={{ fontWeight: 400 }}>
+              {description}
+            </Typography>
           </CardContent>
         </Card>
       </Box>

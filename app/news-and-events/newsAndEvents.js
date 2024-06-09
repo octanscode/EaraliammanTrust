@@ -1,7 +1,8 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import EventModel from "./eventModel";
 import Loader from "@/components/loader";
+import PageLoader from "@/components/pageLoader";
 
 function formatDate(dateString) {
   // Create a Date object from the input string
@@ -47,36 +48,38 @@ const NewsAndEvents = ({ data }) => {
       }}
     >
       {data ? (
-        <Box sx={{ width: "95%", pt: 2, pb: 2, mb: 8 }}>
+        <Box sx={{ width: "95%", pt: { xs: 4, lg: 2 }, pb: 2, mb: 8 }}>
           <Typography variant="h2">Latest News and Events</Typography>
           <Box
             sx={{
               mt: 4,
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "flex-start",
+              flexGrow: 1,
             }}
           >
-            {data ? (
-              data.map((item, index) => (
-                <EventModel
-                  key={index}
-                  src={item.images[0]}
-                  name={item.eventName}
-                  content={item.content[0]}
-                  date={formatDate(item.date)}
-                  id={item._id}
-                />
-              ))
-            ) : (
-              <Typography variant="body1">
-                No events to show. Stay Tuned for new events.
-              </Typography>
-            )}
+            <Grid container spacing={2}>
+              {data ? (
+                data.map((item, index) => (
+                  <Grid item xs={12} lg={3}>
+                    <EventModel
+                      key={index}
+                      src={item.images[0]}
+                      name={item.eventName}
+                      content={item.content[0]}
+                      date={formatDate(item.date)}
+                      id={item._id}
+                    />
+                  </Grid>
+                ))
+              ) : (
+                <Typography variant="body1">
+                  No events to show. Stay Tuned for new events.
+                </Typography>
+              )}
+            </Grid>
           </Box>
         </Box>
       ) : (
-        <Loader />
+        <PageLoader />
       )}
     </Box>
   );
