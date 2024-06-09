@@ -22,6 +22,7 @@ export default function Home() {
     dispatch(resetLoginData());
     dispatch(resetCurrActiveNavItem());
   }, []);
+  console.log("The env variable is ", process.env.NEXT_PUBLIC_NODE_ENV);
   return (
     <Box>
       <CustomAppbar />

@@ -124,7 +124,7 @@ export default function Sidebar({ color }) {
               }}
             >
               <ListItemButton disableRipple onClick={() => handleLinks(index)}>
-                <Typography variant="h6" sx={{ p: 1 }}>
+                <Typography variant="subtitle1" sx={{ p: 1 }}>
                   {text}
                 </Typography>
               </ListItemButton>

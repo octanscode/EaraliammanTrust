@@ -18,7 +18,7 @@ const OpportunityCard = ({ name, content, bgColor }) => {
         {name}
       </Typography>
       <Divider sx={{ backgroundColor: "#f5f5f5", mt: 1 }} />
-      <Typography variant="body1" sx={{ color: "white", mt: 2 }}>
+      <Typography variant="subtitle2" sx={{ color: "white", mt: 2 }}>
         {content}
       </Typography>
     </Box>

@@ -11,13 +11,13 @@ const DevelopmentSchemesModel = ({ src, name, desc }) => {
         width: "100%",
         borderRadius: "1rem",
         backgroundColor: "white",
-        height: { xs: "64vh", lg: "82vh" },
+        height: { xs: "62vh", lg: "82vh" },
       }}
     >
       <Box
         sx={{
           width: "100%",
-          height: { xs: "55%", lg: "70%" },
+          height: { xs: "50%", lg: "70%" },
           borderRadius: "1rem",
         }}
       >
@@ -32,7 +32,7 @@ const DevelopmentSchemesModel = ({ src, name, desc }) => {
           }}
         />{" "}
       </Box>
-      <Box sx={{ color: "white", height: { xs: "45%", lg: "30%" } }}>
+      <Box sx={{ color: "white", height: { xs: "50%", lg: "30%" } }}>
         <Typography
           variant="h6"
           sx={{

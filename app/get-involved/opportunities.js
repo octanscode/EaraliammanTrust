@@ -7,7 +7,7 @@ const Opportunities = () => {
   return (
     <Box sx={{ mt: 7 }}>
       <Typography
-        variant="h6"
+        variant="h2"
         sx={{
           textAlign: "center",
           mb: 3,
